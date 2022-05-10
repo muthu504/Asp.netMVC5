@@ -1,0 +1,33 @@
+﻿@model List<Bus.Data.BusTrack>
+@{
+    ViewBag.Title = "BusList";
+}
+
+<h2>BusList</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>Id</th>
+        <th>BoardStage</th>
+        <th>Travel Date</th>
+        <th>Amount</th>
+        <th>Rating</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BusID</td>
+            <td>@item.BoardingStage</td>
+            <td>@item.TravelDate</td>
+            <td>@item.Amount</td>
+            <td>@item.Rating</td>
+            <td>
+                <a href="@Url.Action("BusOperation",new {item.BusID,item.BoardingStage,item.TravelDate,item.Amount,item.Rating})" class="btn btn-success">Update</a>
+                <a href="@Url.Action("Delete",new { id = item.BusID })" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,52 @@
+﻿
+@model Bus.Data.BusTrack
+@{
+    ViewBag.Title = "BusOperation";
+}
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<h2>Bus Portal</h2>
+@using (Html.BeginForm("AddBus", "BusOperation", FormMethod.Post))
+{
+
+    <div class="container">
+        <div class="form-group ">
+            @Html.HiddenFor(x => x.BusID)
+            <label>BoardingPoint</label>
+            @Html.ValidationMessageFor(x => x.BoardingStage, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.BoardingStage, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group ">
+
+            <label>Travel Date</label>
+            @Html.ValidationMessageFor(x => x.TravelDate, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.TravelDate, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>Amount</label>
+            @Html.ValidationMessageFor(x => x.Amount, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>Rating</label>
+            @Html.ValidationMessageFor(x => x.Rating, "", new { @class = "error" })
+            @Html.TextBoxFor(x => x.Rating, new { @class = "form-control" })
+
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="reset">Cancel</button>
+        </div>
+
+
+
+    </div>
+
+}

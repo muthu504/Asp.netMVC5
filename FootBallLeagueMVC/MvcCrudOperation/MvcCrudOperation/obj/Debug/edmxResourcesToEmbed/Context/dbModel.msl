@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="TestEntities">
+    <EntitySetMapping Name="FootBallLeagues">
+      <EntityTypeMapping TypeName="TestModel.FootBallLeague">
+        <MappingFragment StoreEntitySet="FootBallLeague">
+          <ScalarProperty Name="MatchId" ColumnName="MatchId" />
+          <ScalarProperty Name="TeamName1" ColumnName="TeamName1" />
+          <ScalarProperty Name="TeamName2" ColumnName="TeamName2" />
+          <ScalarProperty Name="MatchStatus" ColumnName="MatchStatus" />
+          <ScalarProperty Name="WinningTeam" ColumnName="WinningTeam" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

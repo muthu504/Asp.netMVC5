@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BusCrudModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BusTrack">
+    <Key>
+      <PropertyRef Name="BusID" />
+    </Key>
+    <Property Name="BusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BoardingStage" Type="nvarchar" MaxLength="50" />
+    <Property Name="TravelDate" Type="date" />
+    <Property Name="Amount" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Rating" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BusCrud.dbo.BusRatingView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BusRatingView">
+    <Key>
+      <PropertyRef Name="BusId" />
+    </Key>
+    <Property Name="BusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BoardingStage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="BusCrudModelStoreContainer">
+    <EntitySet Name="BusTrack" EntityType="Self.BusTrack" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BusRatingView" EntityType="Self.BusRatingView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[BusRatingView].[BusId] AS [BusId], 
+[BusRatingView].[BoardingStage] AS [BoardingStage]
+FROM [dbo].[BusRatingView] AS [BusRatingView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

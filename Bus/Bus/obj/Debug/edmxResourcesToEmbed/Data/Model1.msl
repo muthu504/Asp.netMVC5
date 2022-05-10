@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BusCrudModelStoreContainer" CdmEntityContainer="BusCrudEntities">
+    <EntitySetMapping Name="BusTracks">
+      <EntityTypeMapping TypeName="BusCrudModel.BusTrack">
+        <MappingFragment StoreEntitySet="BusTrack">
+          <ScalarProperty Name="BusID" ColumnName="BusID" />
+          <ScalarProperty Name="BoardingStage" ColumnName="BoardingStage" />
+          <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusRatingViews">
+      <EntityTypeMapping TypeName="BusCrudModel.BusRatingView">
+        <MappingFragment StoreEntitySet="BusRatingView">
+          <ScalarProperty Name="BusId" ColumnName="BusId" />
+          <ScalarProperty Name="BoardingStage" ColumnName="BoardingStage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
