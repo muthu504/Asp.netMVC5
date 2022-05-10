@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Assignment5.Models.Account>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>
+    Viewing all accounts...
+</h2>
+@Html.ActionLink("Create new account", "Create")
+
+@foreach (var a in Model)
+{
+    <p>
+        Account Number: @a.AccountNumber
+    </p>
+    <p>
+        Account Holder's Name: @a.Name
+    </p>
+
+    <p>
+        Current Balance: @a.CurrentBalance.ToString("C")
+    </p>
+    @Html.ActionLink("Edit", "Edit", new { accno = @a.AccountNumber })
+    @Html.ActionLink("Delete", "Delete", new { accno = @a.AccountNumber })
+
+    <hr />
+}
+
+

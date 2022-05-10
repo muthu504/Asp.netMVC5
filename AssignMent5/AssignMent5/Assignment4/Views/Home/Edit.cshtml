@@ -1,0 +1,25 @@
+﻿@model Assignment5.Models.Account
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("EditAccount", "Home"))
+{
+    @Html.HiddenFor(a => a.AccountNumber)
+
+    <p>
+        Name: @Html.TextBoxFor(a => a.Name)
+    </p>
+
+    <p>
+        Current Balance: @Html.TextBoxFor(a => a.CurrentBalance)
+    </p>
+
+    <input type="submit" value="Save Modifications" />
+    <p>
+        Hyperlink: @Html.ActionLink("Back to Accounts", "Index")
+    </p>
+
+}

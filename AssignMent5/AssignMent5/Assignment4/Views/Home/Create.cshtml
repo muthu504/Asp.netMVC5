@@ -1,0 +1,26 @@
+﻿@model Assignment5.Models.Account
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("CreateAccount", "Home"))
+{
+    <p>
+        @Html.ValidationMessageFor(a=>a.AccountNumber)
+        Account Number: @Html.TextBoxFor(a => a.AccountNumber)
+    </p>
+
+    <p>
+        @Html.ValidationMessageFor(a => a.Name)
+        Name: @Html.TextAreaFor(a => a.Name)
+    </p>
+
+    <p>
+        @Html.ValidationMessageFor(a => a.CurrentBalance)
+        Current Balance: @Html.TextBoxFor(a => a.CurrentBalance)
+    </p>
+
+    <input type="submit" value="Create Account" />
+}
