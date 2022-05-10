@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Ajax.ActionLink("Get Server Time", "GetServerTime", new AjaxOptions
+{
+    UpdateTargetId = "result",
+    InsertionMode = InsertionMode.Replace,
+    LoadingElementId = "progress"
+})
+
+<span id="progress" style="display:none">
+    Getting server
+    time...wait...
+</span>
+
+<span id="result"></span>

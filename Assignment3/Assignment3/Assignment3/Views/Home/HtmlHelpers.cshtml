@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "HtmlHelpers";
+}
+
+<h2>HtmlHelpers</h2>
+
+@using (Html.BeginForm())
+{
+
+    <p>
+        Textbox: @Html.TextBox("textbox1")
+    </p>
+    <p>
+        Textarea: @Html.TextArea("textarea1")
+    </p>
+
+    string[] s = { "Option1", "Option2", "Option3" };
+    SelectList list = new SelectList(s);
+    <p>
+        Dropdown: @Html.DropDownList("dropdownlist1", list,
+"SELECT")
+    </p>
+
+    <p>
+        Listbox: @Html.ListBox("listbox1", list)
+    </p>
+
+    <p>
+        Radio Buttons:<br />
+        @Html.RadioButton("radiobutton", "RadioButton1")
+        RadioButton1
+        @Html.RadioButton("radiobutton", "RadioButton2")
+        RadioButton2
+        @Html.RadioButton("radiobutton", "RadioButton3")
+        RadioButton3
+    </p>
+
+    <p>
+        Checkboxes:<br />
+        @Html.CheckBox("checkbox1", true) CheckBox1 (initially
+        checked)
+        @Html.CheckBox("checkbox2") CheckBox2
+        @Html.CheckBox("checkbox3") CheckBox3
+    </p>
+
+    <p>
+        Hyperlink: @Html.ActionLink("Back to home", "Index")
+    </p>
+
+    <input type="submit" value="Submit" />
+}
+@section localcontent
+{
+    <h3>HtmlHelpers.cshtml's local content goes here</h3>
+}

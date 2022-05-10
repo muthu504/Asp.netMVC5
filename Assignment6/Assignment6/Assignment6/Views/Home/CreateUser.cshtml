@@ -1,0 +1,30 @@
+﻿@model Assignment6.Models.User
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2>CreateUser</h2>
+
+@{
+    AjaxOptions opt = new AjaxOptions
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "result"
+    };
+}
+
+<h2>Current Users</h2>
+<div id="result">
+    @Html.Action("GetAllUsers")
+</div>
+@using (Ajax.BeginForm("CreateUser", opt))
+{
+    <p>
+        User Name: @Html.TextBoxFor(user => user.UserName)
+    </p>
+
+    <p>
+        Password: @Html.PasswordFor(user => user.Password)
+    </p>
+    <input type="submit" value="Create User" />
+}
